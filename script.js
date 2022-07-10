@@ -19,3 +19,4 @@ fetch("https://api.apilayer.com/fixer/convert?to=EUR&from=USD&amount=100", reque
 
 
 //Functions
+console.log(myHeaders);
