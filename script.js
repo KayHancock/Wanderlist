@@ -1,6 +1,5 @@
 // Variables 
 
-
 // API Fetch Requests
 // Fixer API (currency exchange)
 var myHeaders = new Headers();
@@ -54,3 +53,4 @@ fetch('https://worldwide-restaurants.p.rapidapi.com/search', restaurantOptions)
 	.catch(err => console.error(err));
 
 // Functions
+
