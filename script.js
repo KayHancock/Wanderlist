@@ -17,8 +17,7 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.catch(err => console.error(err));
 
 
-//Functions
-console.log(myHeaders);
+
 
 
 // Travel Briefing API
