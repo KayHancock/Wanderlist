@@ -24,6 +24,4 @@ const getCountryInfo = async (country) => {
       .catch(err => console.error(err));
 };
 
-getCountryInfo("China")
-getCountryInfo("France")
-getCountryInfo("Germany")
+
