@@ -16,7 +16,13 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-
+// travel briefing
+const getCountryInfo = async (country) => {
+    return fetch(`https://travelbriefing.org/${country}?format=json`)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+};
 
 
 <<<<<<< HEAD
