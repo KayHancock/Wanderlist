@@ -17,10 +17,9 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.catch(err => console.error(err));
 
 
-//Functions
-console.log(myHeaders);
 
 
+<<<<<<< HEAD
 // Travel Briefing API
 const searchCountry = async (country) => {
   const countryInfo = await getCountryInfo(country);
@@ -77,3 +76,5 @@ document
     var data = new FormData(evt.target);
     searchCountry(data.get("country"));
   });
+=======
+>>>>>>> 91f74ed150d6deaed018069a797d1cd52717db8f
