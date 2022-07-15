@@ -77,6 +77,12 @@ $(function () {
 	});
 });
 // Functions
+function countryLoad () {
+	displayCountry ()
+	countrySearch()
+
+}
+
 function displayBrowse () {
 	document.location.replace(browsePage);
 }
