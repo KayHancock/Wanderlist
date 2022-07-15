@@ -67,6 +67,12 @@ $(function () {
 	});
 });
 // Functions
+function countryLoad () {
+	displayCountry ()
+	countrySearch()
+
+}
+
 function displayBrowse () {
 	document.location.replace(browsePage);
 }
@@ -87,6 +93,6 @@ function displayCountry () {
 browseBtn.addEventListener("click", displayBrowse);
 homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
-searchBtn.addEventListener("click", countrySearch);
+searchBtn.addEventListener("click", countryLoad);
 surpriseBtn.addEventListener("click", displayCountry);
 
