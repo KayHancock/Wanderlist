@@ -97,5 +97,7 @@ function displayCountry () {
 browseBtn.addEventListener("click", displayBrowse);
 homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
-searchBtn.addEventListener("click", countrySearch);
+if (searchBtn) {
+	searchBtn.addEventListener("click", countrySearch);
+}
 surpriseBtn.addEventListener("click", displayCountry);
