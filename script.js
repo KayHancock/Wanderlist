@@ -1,5 +1,8 @@
 // Variables 
-
+var travelRequestUrl = 'https://travelbriefing.org/countries.json';
+var countryNames = [];
+var submitBtnEl = $('#submitBtn');
+var countrySelector = $('#country-selector');
 // API Fetch Requests
 
 // Hotel API
@@ -23,3 +26,23 @@ const getCountryInfo = async (country) => {
       .then(response => console.log(response))
       .catch(err => console.error(err));
 };
+
+
+fetch(travelRequestUrl)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data);
+		for (var i = 0; i < data.length; i++) {
+			countryNames.push(data[i].name);
+			}
+	})
+
+	console.log(countryNames);
+
+$(function () {
+	$("#country-selector").autocomplete({
+		source: countryNames
+	});
+});
