@@ -1,4 +1,9 @@
 // Variables 
+var homePage = document.getElementById("home");
+var browsePage = document.getElementById("browse");
+var docPage = document.getElementById("docs");
+var surpriseBtn = document.getElementById("surprise");
+var searchBtn = document.getElementById("search");
 
 // API Fetch Requests
 
