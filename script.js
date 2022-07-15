@@ -1,4 +1,7 @@
 // Variables 
+var travelRequestUrl = 'https://travelbriefing.org/countries.json';
+var countryNames = [];
+var countrySelector = $('#country-selector');
 var homeBtn = document.getElementById("home");
 var homePage = 'index.html';
 var browseBtn = document.getElementById("browse");
@@ -9,7 +12,6 @@ var countryPage = 'country.html';
 var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
-var searchBar = document.getElementById("input");
 
 // API Fetch Requests
 
@@ -36,6 +38,24 @@ const getCountryInfo = async (country) => {
 };
 
 
+fetch(travelRequestUrl)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data);
+		for (var i = 0; i < data.length; i++) {
+			countryNames.push(data[i].name);
+			}
+	})
+
+	console.log(countryNames);
+
+$(function () {
+	$("#country-selector").autocomplete({
+		source: countryNames
+	});
+});
 // Functions
 function displayBrowse () {
 	document.location.replace(browsePage);
