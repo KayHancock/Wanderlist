@@ -13,6 +13,8 @@ var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
 
+var drinkingWaterInfo = document.querySelector("#drinkingWaterInfo");
+
 // API Fetch Requests
 
 // Hotel API
@@ -42,6 +44,14 @@ function countrySearch() {
             })
             .then(function (response) {
                 console.log(response);
+				console.log(response.water);
+				console.log(response.water.short);
+
+				var water = document.createElement("div");
+				console.log(response.water.short);
+				water.innerHTML = "Drinking water in " + country + " is " + response.water.short + ".";
+				console.log(water.innerHTML);
+				
             })
     };
 	console.log(country);
@@ -89,4 +99,3 @@ homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
-
