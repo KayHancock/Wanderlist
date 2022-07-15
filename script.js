@@ -1,9 +1,15 @@
 // Variables 
-var homePage = document.getElementById("home");
-var browsePage = document.getElementById("browse");
-var docPage = document.getElementById("docs");
+var homeBtn = document.getElementById("home");
+var homePage = 'index.html';
+var browseBtn = document.getElementById("browse");
+var browsePage = "countrylist.html";
+var docBtn = document.getElementById("docs");
+var docPage = 'doc.html';
+var countryPage = 'country.html';
+var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
+var searchBar = document.getElementById("input");
 
 // API Fetch Requests
 
@@ -21,7 +27,7 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-// travel briefing
+// TravelBriefing API
 const getCountryInfo = async (country) => {
     return fetch(`https://travelbriefing.org/${country}?format=json`)
       .then(response => response.json())
@@ -29,4 +35,28 @@ const getCountryInfo = async (country) => {
       .catch(err => console.error(err));
 };
 
+
+// Functions
+function displayBrowse () {
+	document.location.replace(browsePage);
+}
+
+function displayHome () {
+	document.location.replace(homePage);
+}
+
+function displayDoc () {
+	document.location.replace(docPage);
+}
+
+function displayCountry () {
+	document.location.replace(countryPage);
+}
+
+// Event Listeners
+browseBtn.addEventListener("click", displayBrowse);
+homeBtn.addEventListener("click", displayHome);
+docBtn.addEventListener("click", displayDoc);
+searchBtn.addEventListener("click", displayCountry);
+surpriseBtn.addEventListener("click", displayCountry);
 
