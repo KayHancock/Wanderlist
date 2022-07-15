@@ -1,7 +1,15 @@
 // Variables 
-var homePage = document.getElementById("home");
-var browsePage = document.getElementById("browse");
-var docPage = document.getElementById("docs");
+var travelRequestUrl = 'https://travelbriefing.org/countries.json';
+var countryNames = [];
+var countrySelector = $('#country-selector');
+var homeBtn = document.getElementById("home");
+var homePage = 'index.html';
+var browseBtn = document.getElementById("browse");
+var browsePage = "countrylist.html";
+var docBtn = document.getElementById("docs");
+var docPage = 'doc.html';
+var countryPage = 'country.html';
+var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
 
@@ -21,21 +29,11 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-// travel briefing
-// const getCountryInfo = async (country) => {
-//     return fetch(`https://travelbriefing.org/${country}?format=json`)
-//       .then(response => response.json())
-//       .then(response => console.log(response))
-//       .catch(err => console.error(err));
-// };
 
 // Travel-Breifing on page
-var countryForm = document.querySelector("#countryForm");
-var countryName = document.querySelector("#countryname");
-var search = document.querySelector("#search");
 
 function countrySearch() {
-	var country = document.getElementById("countryname").value;
+	var country = countrySelector.val();
 	console.log(country);
     var getCountryInfo = async (country) => {
         return fetch(`https://travelbriefing.org/${country}?format=json`)
@@ -50,5 +48,45 @@ function countrySearch() {
     getCountryInfo(country);
 }
 
-search.addEventListener("click", countrySearch);
+fetch(travelRequestUrl)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data);
+		for (var i = 0; i < data.length; i++) {
+			countryNames.push(data[i].name);
+			}
+	})
+
+	console.log(countryNames);
+
+$(function () {
+	$("#country-selector").autocomplete({
+		source: countryNames
+	});
+});
+// Functions
+function displayBrowse () {
+	document.location.replace(browsePage);
+}
+
+function displayHome () {
+	document.location.replace(homePage);
+}
+
+function displayDoc () {
+	document.location.replace(docPage);
+}
+
+function displayCountry () {
+	document.location.replace(countryPage);
+}
+
+// Event Listeners
+browseBtn.addEventListener("click", displayBrowse);
+homeBtn.addEventListener("click", displayHome);
+docBtn.addEventListener("click", displayDoc);
+searchBtn.addEventListener("click", countrySearch);
+surpriseBtn.addEventListener("click", displayCountry);
 
