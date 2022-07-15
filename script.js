@@ -29,14 +29,24 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-// TravelBriefing API
-const getCountryInfo = async (country) => {
-    return fetch(`https://travelbriefing.org/${country}?format=json`)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-};
 
+// Travel-Breifing on page
+
+function countrySearch() {
+	var country = countrySelector.val();
+	console.log(country);
+    var getCountryInfo = async (country) => {
+        return fetch(`https://travelbriefing.org/${country}?format=json`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+    };
+	console.log(country);
+    getCountryInfo(country);
+}
 
 fetch(travelRequestUrl)
 	.then(function (response) {
@@ -77,6 +87,6 @@ function displayCountry () {
 browseBtn.addEventListener("click", displayBrowse);
 homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
-searchBtn.addEventListener("click", displayCountry);
+searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
 
