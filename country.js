@@ -26,6 +26,7 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.water.short);
 			water.innerHTML = "Drinking water in " + countryName + " is " + response.water.short + ".";
 			console.log(water.innerHTML);
+			drinkingWaterInfo.appendChild(water);
 		})
 		
 };
