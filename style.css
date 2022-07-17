@@ -6,3 +6,7 @@ nav {
  text-align: center;
 }
 
+/* google map */
+#map {
+    height: 500px;
+}
