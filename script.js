@@ -12,7 +12,6 @@ var countryPage = 'country.html';
 var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
-
 var countryRef = document.querySelector("#countryRef");
 
 // API Fetch Requests
@@ -34,16 +33,25 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&local
 
 // Travel-Breifing on page
 function countrySearch() {
+	$("#country-anchor").remove();
+	$("#alert-message").remove();
 	var country = countrySelector.val();
 	console.log(country);
-
-	var countryEl = document.createElement('a');
-    countryEl.setAttribute('href', './country.html?country=' + country);
+	if (countryNames.includes(countrySelector.val())) {
+		var countryEl = document.createElement('a');
+	countryEl.setAttribute('href', './country.html?country=' + country);
+	countryEl.setAttribute('id', 'country-anchor')
 
 	countryEl.innerHTML = country;
 	countryRef.appendChild(countryEl);
+	} else {
+		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list");
+		$("#countryRef").append(alertMessage);
+	}
+
 }
 
+// create array of countries from TravelBriefing API
 fetch(travelRequestUrl)
 	.then(function (response) {
 		return response.json();
@@ -57,6 +65,7 @@ fetch(travelRequestUrl)
 
 	console.log(countryNames);
 
+// Autocomplete for country list in index.html search bar
 $(function () {
 	$("#country-selector").autocomplete({
 		source: countryNames
@@ -85,9 +94,7 @@ function displayDoc () {
 browseBtn.addEventListener("click", displayBrowse);
 homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
-if (searchBtn) {
-	searchBtn.addEventListener("click", countrySearch);
-}
+searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
 
 
