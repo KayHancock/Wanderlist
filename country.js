@@ -247,101 +247,28 @@ var getCountryInfo = async (countryName) => {
 			// Vaccinations and health
 			console.log(response);
 			console.log(response.vaccinations);
-			console.log(response.vaccinations[0]);
-			console.log(response.vaccinations[0].name);
-			console.log(response.vaccinations[0].message);
-			console.log(response.vaccinations[1]);
-			console.log(response.vaccinations[1].name);
-			console.log(response.vaccinations[1].message);
-			console.log(response.vaccinations[2]);
-			console.log(response.vaccinations[2].name);
-			console.log(response.vaccinations[2].message);
-			console.log(response.vaccinations[3]);
-			console.log(response.vaccinations[3].name);
-			console.log(response.vaccinations[3].message);
-			console.log(response.vaccinations[4]);
-			console.log(response.vaccinations[4].name);
-			console.log(response.vaccinations[4].message);
-			console.log(response.vaccinations[5]);
-			console.log(response.vaccinations[5].name);
-			console.log(response.vaccinations[5].message);
 
+			// Vaccinations and health description
 			var healthDescription = document.createElement("div");
 			healthDescription.innerHTML = "Vaccinations and Health";
 			console.log(healthDescription.innerHTML);
 			vaccinationsHealthDescription.appendChild(healthDescription);
-			
-			var healthName0 = document.createElement("div");
-			healthName0.className = "healthName0";
-			healthName0.innerHTML = response.vaccinations[0].name;
-			console.log(healthName0.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName0);
 
-			var healthMessage0 = document.createElement("div");
-			healthMessage0.className = "healthMessage0";
-			healthMessage0.innerHTML = response.vaccinations[0].message;
-			console.log(healthMessage0.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage0);
-
-			var healthName1 = document.createElement("div");
-			healthName1.className = "healthName1";
-			healthName1.innerHTML = response.vaccinations[1].name;
-			console.log(healthName1.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName1);
-
-			var healthMessage1 = document.createElement("div");
-			healthMessage1.className = "healthMessage1";
-			healthMessage1.innerHTML = response.vaccinations[1].message;
-			console.log(healthMessage1.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage1);
-
-			var healthName2 = document.createElement("div");
-			healthName2.className = "healthName2";
-			healthName2.innerHTML = response.vaccinations[2].name;
-			console.log(healthName2.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName2);
-
-			var healthMessage2 = document.createElement("div");
-			healthMessage2.className = "healthMessage2";
-			healthMessage2.innerHTML = response.vaccinations[2].message;
-			console.log(healthMessage2.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage2);
-
-			var healthName3 = document.createElement("div");
-			healthName3.className = "healthName3";
-			healthName3.innerHTML = response.vaccinations[3].name;
-			console.log(healthName3.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName3);
-
-			var healthMessage3 = document.createElement("div");
-			healthMessage3.className = "healthMessage3";
-			healthMessage3.innerHTML = response.vaccinations[3].message;
-			console.log(healthMessage3.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage3);
-
-			var healthName4 = document.createElement("div");
-			healthName4.className = "healthName4";
-			healthName4.innerHTML = response.vaccinations[4].name;
-			console.log(healthName4.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName4);
-
-			var healthMessage4 = document.createElement("div");
-			healthMessage4.className = "healthMessage4";
-			healthMessage4.innerHTML = response.vaccinations[4].message;
-			console.log(healthMessage4.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage4);
-
-			var healthName5 = document.createElement("div");
-			healthName5.className = "healthName5";
-			healthName5.innerHTML = response.vaccinations[5].name;
-			console.log(healthName5.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthName5);
-
-			var healthMessage5 = document.createElement("div");
-			healthMessage5.className = "healthMessage5";
-			healthMessage5.innerHTML = response.vaccinations[5].message;
-			console.log(healthMessage5.innerHTML);
-			vaccinationsHealthInfo.appendChild(healthMessage5);
+			// Vaccinations and health info
+			for (i = 0; i < response.vaccinations.length; i++ ) {
+				console.log(response.vaccinations[i].name);
+				var healthName = document.createElement("div");
+				healthName.className = "healthName";
+				healthName.innerHTML = response.vaccinations[i].name;
+				console.log(healthName.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthName);
+				console.log(response.vaccinations[i].message);
+				var healthMessage = document.createElement("div");
+				healthMessage.className = "healthMessage";
+				healthMessage.innerHTML = response.vaccinations[i].message;
+				console.log(healthMessage.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthMessage);
+			}
 
 			// Telephone
 			console.log(response);
