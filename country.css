@@ -1,9 +1,22 @@
-.countryName {
+/* .countryName {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
     color: black;
-}
+} */
+
+.countryName { 
+    text-align: center;
+    color: darkblue;
+    text-transform: uppercase;
+    padding: 1px;
+    font-family: 'Raleway', cursive;
+    font-weight: 100;
+    position: relative;
+    background: linear-gradient(to right, darkblue, #eee, darkblue);
+    font-size: 50px;
+    font-weight: bold;
+  }
 
 .travelbriefingInformation {
     font-size: 50px;
