@@ -1,17 +1,17 @@
 .countryName { 
     text-align: center;
     color: darkblue;
-    text-transform: uppercase;
     padding: 1px;
-    font-family: 'Raleway', cursive;
-    font-weight: 100;
-    position: relative;
-    background: linear-gradient(to right, darkblue, #eee, darkblue);
+    font-family: 'Dancing Script', serif;
+    text-shadow: 4px 4px 4px gray;
     font-size: 50px;
     font-weight: bold;
+    position: relative;
+    background: linear-gradient(to right, darkblue, #eee, darkblue);
 }
 
 .travelbriefingInformation {
+    font-family: 'Dancing Script', serif;
     font-size: 50px;
     font-weight: bold;
     color: black;
@@ -19,6 +19,7 @@
 }
 
 .neighboringCountryDescription, .travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
+    font-family: 'Dancing Script', serif;
     font-size: 40px;
     font-weight: bold;
     color: black;
