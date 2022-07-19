@@ -13,6 +13,7 @@ var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
 var countryRef = document.querySelector("#countryRef");
+var countryEl = document.createElement('a');
 
 // API Fetch Requests
 
@@ -25,11 +26,6 @@ var options = {
 	}
 };
 
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&locale=en_US&currency=USD', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
 
 // Travel-Breifing on page
 function countrySearch() {
@@ -38,7 +34,6 @@ function countrySearch() {
 	var country = countrySelector.val();
 	console.log(country);
 	if (countryNames.includes(countrySelector.val())) {
-		var countryEl = document.createElement('a');
 	countryEl.setAttribute('href', './country.html?country=' + country);
 	countryEl.setAttribute('id', 'country-anchor')
 
@@ -63,7 +58,7 @@ fetch(travelRequestUrl)
 			}
 	})
 
-	console.log(countryNames);
+console.log(countryNames);
 
 // Autocomplete for country list in index.html search bar
 $(function () {
@@ -73,10 +68,7 @@ $(function () {
 });
 
 // Functions
-function countryLoad () {
-	countrySearch()
 
-}
 
 function displayBrowse () {
 	document.location.replace(browsePage);
@@ -92,7 +84,6 @@ function displayDoc () {
 
 // Event Listeners
 browseBtn.addEventListener("click", displayBrowse);
-homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
