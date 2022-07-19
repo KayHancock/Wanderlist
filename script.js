@@ -95,4 +95,27 @@ browseBtn.addEventListener("click", displayBrowse);
 homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
-surpriseBtn.addEventListener("click", displayCountry);
+//surpriseBtn.addEventListener("click", displayCountry);
+
+
+// search history to local storage
+function getCountryToLocalStorage(){
+	//console.log(localStorage.getItem("list-country"));
+	return localStorage.getItem("list-country") ? JSON.parse(localStorage.getItem("list-country")) : [];
+   }
+   
+   function saveCountryToLocalStorage(country){
+    //console.log("imhere");
+   let countries = getCountryToLocalStorage()
+   
+   countries.push(country);
+   
+   localStorage.setItem("list-country",JSON.stringify(countries));
+   //console.log(countries);
+   
+   }
+
+   saveCountryToLocalStorage ('paris')
+   //console.log("imhere");
+   //getCountryToLocalStorage ()
+   //console.log("imhere");
