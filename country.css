@@ -2,7 +2,7 @@
     text-align: center;
     color: darkblue;
     padding: 1px;
-    font-family: 'Dancing Script', serif;
+    font-family: "Dancing Script", serif;
     text-shadow: 4px 4px 4px gray;
     font-size: 50px;
     font-weight: bold;
@@ -11,27 +11,26 @@
 }
 
 .travelbriefingInformation {
-    font-family: 'Dancing Script', serif;
-    font-size: 50px;
+    font-family: "Dancing Script", serif;
+    font-size: 45px;
     font-weight: bold;
     color: black;
     border-bottom: 2px solid black;
 }
 
 .neighboringCountryDescription, .travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
-    font-family: 'Dancing Script', serif;
+    font-family: "Dancing Script", serif;
     font-size: 40px;
     font-weight: bold;
     color: black;
 }
 
 /* .neighboringCountryInfo, .travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
-    color: black; */
-    /* text-align: center;
 } */
 
 .neighbor, .adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
-    font-size: 25px;
+    font-family: "Old Standard TT", serif;
+    font-size: 20px;
     background-color: darkblue;
     color: white;
     margin-bottom: 5px;
@@ -39,7 +38,8 @@
 }
 
 .urlCA, .urlUA {
-    font-size: 20px;
+    font-family: "Old Standard TT", serif;
+    font-size: 16px;
     padding: 10px;
 }
 
