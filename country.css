@@ -12,14 +12,23 @@
     border-bottom: 2px solid black;
 }
 
-.travelAdviseDescription, .drinkingWaterDescription, .timezoneDescription, .currencyDescription {
+.travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
     font-size: 30px;
     font-weight: bold;
     color: black;
 }
 
-.travelAdviseInfo, .drinkingWaterInfo, .timezoneInfo, .currencyInfo {
+.travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
     color: black;
+    /* text-align: center; */
+}
+
+.adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
+    font-size: 25px;
+    background-color: darkblue;
+    color: white;
+    margin-bottom: 5px;
+    padding: 10px;
 }
 
 /* google map */
