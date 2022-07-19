@@ -1,3 +1,4 @@
+// CountryName
 var countryNameEl = document.querySelector("#countryName");
 
 // Travel Advise 
@@ -92,6 +93,7 @@ var getCountryInfo = async (countryName) => {
 			console.log(adviseDescription.innerHTML);
 			travelAdviseDescription.appendChild(adviseDescription);
 
+			// Canadian government travel advise summary
 			var adviseCA = document.createElement("div");
 			adviseCA.className = "adviseCA";
 			console.log(response.advise.CA.advise);
@@ -99,6 +101,7 @@ var getCountryInfo = async (countryName) => {
 			console.log(adviseCA.innerHTML);
 			travelAdviseInfo.appendChild(adviseCA);
 
+			// Full report from Canadian govenment
 			// Create anchor element
 			var urlCA = document.createElement('a');
 			// Add class name to anchor element
@@ -114,12 +117,14 @@ var getCountryInfo = async (countryName) => {
 			// Append the anchor element to the body
 			travelAdviseInfo.appendChild(urlCA); 
 
+			// Australian government travel advise summary
 			var adviseUA = document.createElement("div");
 			adviseUA.className = "adviseUA";
 			adviseUA.innerHTML = "Austrailian government: " + response.advise.UA.advise + " in " + countryName;
 			console.log(adviseUA.innerHTML);
 			travelAdviseInfo.appendChild(adviseUA);
 
+			// Full report from Australian govenment
 			// Create anchor element.
 			var urlUA = document.createElement('a');
 			// Add class name to anchor element
@@ -140,11 +145,13 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.water);
 			console.log(response.water.short);
 
+			// Drinking water description
 			var waterDescription = document.createElement("div");
 			waterDescription.innerHTML = "Drinking Water";
 			console.log(waterDescription.innerHTML);
 			drinkingWaterDescription.appendChild(waterDescription);
 
+			// Drinking water info
 			var water = document.createElement("div");
 			water.className = "water"; 
 			water.innerHTML = "Drinking tap water in " + countryName + " is " + response.water.short;
@@ -158,11 +165,13 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.timezone);
 			console.log(response.timezone.name);
 
+			// Timezone description
 			var timeDescription = document.createElement("div");
 			timeDescription.innerHTML = "Timezone";
 			console.log(timeDescription.innerHTML);
 			timezoneDescription.appendChild(timeDescription);
 
+			// Timezone info
 			var time = document.createElement("div");
 			time.className = "time";
 			time.innerHTML = response.timezone.name;
@@ -174,11 +183,13 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.currency);
 			console.log(response.currency.code);
 
+			// Currency description
 			var currDescription = document.createElement("div");
 			currDescription.innerHTML = "Currency";
 			console.log(currDescription.innerHTML);
 			currencyDescription.appendChild(currDescription);
 
+			// Currency info
 			var curr = document.createElement("div");
 			curr.className = "curr";
 			curr.innerHTML = "The currency in " + countryName + " is " + response.currency.code + ".";
@@ -190,11 +201,13 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.language);
 			console.log(response.language[0].language);
 
+			// Language description
 			var langDescription = document.createElement("div");
 			langDescription.innerHTML = "Language";
 			console.log(langDescription.innerHTML);
 			languageDescription.appendChild(langDescription);
 
+			// Language info
 			var lang = document.createElement("div");
 			lang.className = "lang";
 			lang.innerHTML = "The language spoken in " + countryName + " is " + response.language[0].language;
@@ -213,29 +226,34 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.telephone.fire);
 			console.log(response.telephone.police);
 
+			// Telephone description
 			var phoneDescription = document.createElement("div");
 			phoneDescription.innerHTML = "Telephone";
 			console.log(phoneDescription.innerHTML);
 			telephoneDescription.appendChild(phoneDescription);
 			
+			// Calling code telephone info
 			var callingCode = document.createElement("div");
 			callingCode.className = "callingCode";
 			callingCode.innerHTML = " 📞 +" + response.telephone.calling_code;
 			console.log(callingCode.innerHTML);
 			telephoneInfo.appendChild(callingCode);
 
+			// Ambulance telephone info
 			var ambulance = document.createElement("div");
 			ambulance.className = "ambulance";
 			ambulance.innerHTML = "🚑 " + response.telephone.ambulance;
 			console.log(ambulance.innerHTML);
 			telephoneInfo.appendChild(ambulance);
 
+			// Fire telephone info
 			var fire = document.createElement("div");
 			fire.className = "fire";
 			fire.innerHTML = "🔥 " + response.telephone.fire;
 			console.log(fire.innerHTML);
 			telephoneInfo.appendChild(fire);
 
+			// Police telephone info
 			var police = document.createElement("div");
 			police.className = "police";
 			police.innerHTML = "🚓 " + response.telephone.police;
@@ -249,23 +267,27 @@ var getCountryInfo = async (countryName) => {
 			console.log(response.electricity.frequency);
 			console.log(response.electricity.plugs);
 
+			// Electricity description
 			var elecDescription = document.createElement("div");
 			elecDescription.innerHTML = "Electricity";
 			console.log(elecDescription.innerHTML);
 			electricityDescription.appendChild(elecDescription);
 
+			// Voltage electricity info
 			var voltage = document.createElement("div");
 			voltage.className = "voltage";
 			voltage.innerHTML = "Voltage: " + response.electricity.voltage;
 			console.log(voltage.innerHTML);
 			electricityInfo.appendChild(voltage);
 
+			// Frequency electricity info
 			var frequency = document.createElement("div");
 			frequency.className = "frequency";
 			frequency.innerHTML = "Frequency: " + response.electricity.frequency;
 			console.log(frequency.innerHTML);
 			electricityInfo.appendChild(frequency);
 
+			// Plugs electricity info
 			var plugsResponse = response.electricity.plugs;
 			plugsResponse.forEach(display)
 			function display(item) {
