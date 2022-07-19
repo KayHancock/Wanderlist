@@ -96,17 +96,3 @@ homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
-
-
-//google map
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 39.952583, lng: -75.165222 },
-    zoom: 8,
-  });
-}
-
-window.initMap = initMap;
-//end of google map
