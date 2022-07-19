@@ -1,33 +1,38 @@
 .countryName {
-    font-size: 44px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
     color: black;
 }
 
 .travelbriefingInformation {
-    font-size: 44px;
+    font-size: 50px;
     font-weight: bold;
     color: black;
     border-bottom: 2px solid black;
 }
 
-.travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
-    font-size: 30px;
+.neighboringCountryDescription, .travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
+    font-size: 40px;
     font-weight: bold;
     color: black;
 }
 
-.travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
-    color: black;
-    /* text-align: center; */
-}
+/* .neighboringCountryInfo, .travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
+    color: black; */
+    /* text-align: center;
+} */
 
-.adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
+.neighbor, .adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
     font-size: 25px;
     background-color: darkblue;
     color: white;
     margin-bottom: 5px;
+    padding: 10px;
+}
+
+.urlCA, .urlUA {
+    font-size: 20px;
     padding: 10px;
 }
 

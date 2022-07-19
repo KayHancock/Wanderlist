@@ -1,6 +1,12 @@
 // CountryName
 var countryNameEl = document.querySelector("#countryName");
 
+// Neighboring Countries
+var neighboringCountryDescription = document.querySelector("#neighboringCountryDescription");
+console.log(neighboringCountryDescription);
+var neighboringCountryInfo = document.querySelector("#neighboringCountryInfo");
+console.log(neighboringCountryInfo);
+
 // Travel Advise 
 var travelAdviseDescription = document.querySelector("#travelAdviseDescription");
 console.log(travelAdviseDescription);
@@ -76,7 +82,29 @@ var getCountryInfo = async (countryName) => {
 			return response.json();
 		})
 		.then(function (response) {
-			// Travel Advise
+			// Neighboring countries
+			console.log(response);
+			console.log(response.neighbors);
+			console.log(response.neighbors[0].name);
+			console.log(response.neighbors[1].name);
+			console.log(response.neighbors[2].name);
+			console.log(response.neighbors[3].name);
+			console.log(response.neighbors[4].name);
+
+			// Neighboring countries description
+			var neighborDescription = document.createElement("div");
+			neighborDescription.innerHTML = "Neighboring Countries";
+			console.log(neighborDescription.innerHTML);
+			neighboringCountryDescription.appendChild(neighborDescription);
+
+			// Neighboring countries info
+			var neighbor = document.createElement("div");
+			neighbor.className = "neighbor";
+			neighbor.innerHTML = "Some countries that neighbor " + countryName + " include: " + response.neighbors[0].name + ", " + response.neighbors[1].name + ", " + response.neighbors[2].name + ", " + response.neighbors[3].name + ", " + response.neighbors[4].name;
+			console.log(neighbor.innerHTML);
+			neighboringCountryInfo.appendChild(neighbor);
+
+			// Travel advise
 			console.log(response);
 			console.log(response.advise);
 			console.log(response.advise);
@@ -174,7 +202,7 @@ var getCountryInfo = async (countryName) => {
 			// Timezone info
 			var time = document.createElement("div");
 			time.className = "time";
-			time.innerHTML = response.timezone.name;
+			time.innerHTML = "The time zone in " + countryName + " is " + response.timezone.name;
 			console.log(time.innerHTML);
 			timezoneInfo.appendChild(time);
 
@@ -192,7 +220,7 @@ var getCountryInfo = async (countryName) => {
 			// Currency info
 			var curr = document.createElement("div");
 			curr.className = "curr";
-			curr.innerHTML = "The currency in " + countryName + " is " + response.currency.code + ".";
+			curr.innerHTML = "The currency in " + countryName + " is " + response.currency.code;
 			console.log(curr.innerHTML);
 			currencyInfo.appendChild(curr);
 
