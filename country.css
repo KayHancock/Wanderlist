@@ -18,11 +18,14 @@
     border-bottom: 2px solid black;
 }
 
-.neighboringCountryDescription, .travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .telephoneDescription, .electricityDescription {
+.neighboringCountryDescription, .travelAdviseDescription, .drinkingWaterDescription, .visaRequirementsDescription, .timezoneDescription, .currencyDescription, .languageDescription, .vaccinationsHealthDescription, .telephoneDescription, .electricityDescription {
     font-family: "Dancing Script", serif;
     font-size: 40px;
     font-weight: bold;
-    color: black;
+    color: white;
+    background-color: darkblue;
+    padding-left: 20px;
+    margin-bottom: 10px;
 }
 
 /* .neighboringCountryInfo, .travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
@@ -31,16 +34,33 @@
 .neighbor, .adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
     font-family: "Old Standard TT", serif;
     font-size: 20px;
-    background-color: darkblue;
-    color: white;
+    color: black;
     margin-bottom: 5px;
-    padding: 10px;
+    padding-left: 20px;
 }
 
 .urlCA, .urlUA {
     font-family: "Old Standard TT", serif;
     font-size: 16px;
-    padding: 10px;
+    padding-left: 20px;
+    color: black;
+}
+
+.healthName {
+    font-family: "Old Standard TT", serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+.healthMessage {
+    font-family: "Old Standard TT", serif;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    color: black;
 }
 
 /* google map */
