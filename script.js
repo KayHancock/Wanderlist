@@ -40,7 +40,7 @@ function countrySearch() {
 	countryEl.innerHTML = country;
 	countryRef.appendChild(countryEl);
 	} else {
-		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list");
+		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list or click 'Surprise Me'");
 		$("#countryRef").append(alertMessage);
 	}
 
@@ -69,6 +69,28 @@ $(function () {
 
 // Functions
 
+// generate random country anchor when user clicks 'surprise me'
+$("#surprise").click(function() {
+	var countryNames = [];
+	$("#country-anchor").remove();
+	$("#alert-message").remove();
+	fetch(travelRequestUrl)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				countryNames.push(data[i].name);
+				var randomIndex = Math.floor(Math.random() * countryNames.length);
+				countryEl.setAttribute('href', './country.html?country=' + countryNames[randomIndex]);
+				countryEl.setAttribute('id', 'country-anchor');
+				countryEl.innerHTML = countryNames[randomIndex];
+				countryRef.appendChild(countryEl);
+				}
+	})
+})
+
 
 function displayBrowse () {
 	document.location.replace(browsePage);
@@ -86,4 +108,3 @@ function displayDoc () {
 browseBtn.addEventListener("click", displayBrowse);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
-surpriseBtn.addEventListener("click", displayCountry);
