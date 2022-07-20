@@ -72,7 +72,7 @@ $(function () {
 
 // Functions
 
-// generate random country anchor when user clicks 'surprise me'
+// generate random country when user clicks 'surprise me'
 $("#surprise").click(function() {
 	var countryNames = [];
 	$("#country-anchor").remove();
@@ -86,28 +86,20 @@ $("#surprise").click(function() {
 			for (var i = 0; i < data.length; i++) {
 				countryNames.push(data[i].name);
 				var randomIndex = Math.floor(Math.random() * countryNames.length);
-				countryEl.setAttribute('href', './country.html?country=' + countryNames[randomIndex]);
-				countryEl.setAttribute('id', 'country-anchor');
-				countryEl.innerHTML = countryNames[randomIndex];
-				countryRef.appendChild(countryEl);
+				document.location.replace('./country.html?country=' + countryNames[randomIndex]);
 				}
 	})
 })
 
 
-function displayBrowse () {
+$("#browse").click(function() {
 	document.location.replace(browsePage);
-}
+})
 
-function displayHome () {
-	document.location.replace(homePage);
-}
-
-function displayDoc () {
+$("#docs").click(function() {
 	document.location.replace(docPage);
-}
+})
+
 
 // Event Listeners
-browseBtn.addEventListener("click", displayBrowse);
-docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
