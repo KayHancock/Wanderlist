@@ -7,12 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <title>Wallabie Travel Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 
 <body>
-  <header class="title head is-1">
+  <header id="title" class="title head is-1">
     Wallabie Travel Planner
   </header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -24,7 +27,7 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu body">
       <div class="navbar-start">
         <a id="home" class="navbar-item">
           Home
@@ -53,13 +56,13 @@
   <div class="section">
 
     <div>
-      <h3>Start your adventure here: </h3>
+      <h3 class="body">Start your adventure here: </h3>
       <input class="input is-info is-rounded is-medium" id="country-selector" type="text"
         placeholder="Where do you want to go?">
-      <button id="search" class="button is-primary is-normal">Submit</button>
+      <button id="search" class="button is-primary is-normal body">Submit</button>
     </div>
 
-    <div id="countryRef"></div>
+    <div id="countryRef" class="body"></div>
 
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
