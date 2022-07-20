@@ -98,11 +98,14 @@ var getCountryInfo = async (countryName) => {
 			neighboringCountryDescription.appendChild(neighborDescription);
 
 			// Neighboring countries info
-			var neighbor = document.createElement("div");
-			neighbor.className = "neighbor";
-			neighbor.innerHTML = "Some countries that neighbor " + countryName + " include: " + response.neighbors[0].name + ", " + response.neighbors[1].name + ", " + response.neighbors[2].name + ", " + response.neighbors[3].name + ", " + response.neighbors[4].name;
-			console.log(neighbor.innerHTML);
-			neighboringCountryInfo.appendChild(neighbor);
+			for (i = 0; i < response.neighbors.length; i++ ) {
+				console.log(response.neighbors[i].name);
+				var neighbor = document.createElement("div");
+				neighbor.className = "neighbor";
+				neighbor.innerHTML = response.neighbors[i].name;
+				console.log(neighbor.innerHTML);
+				neighboringCountryInfo.appendChild(neighbor);
+			}
 
 			// Travel advise
 			console.log(response);
