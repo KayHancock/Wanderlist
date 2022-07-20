@@ -40,6 +40,20 @@ $(function () {
 	});
 });
 
+// Saved search history on homepage
+
+function searchHistory () {
+	var searchedCountry = localStorage.getItem('SavedSearch');
+	if (typeof searchedCountry === 'string') {
+		$('#saved-searches').removeClass("is-hidden");
+		var browseCountry = document.createElement('a');
+		browseCountry.setAttribute('href', './country.html?country=' + searchedCountry.innerHTML);
+		browseCountry.innerHTML = searchedCountry;
+		$("#saved-searches").append(browseCountry);
+	}
+}
+
+searchHistory();
 
 // generate random country when user clicks 'surprise me'
 $("#surprise").click(function() {
@@ -60,16 +74,16 @@ $("#surprise").click(function() {
 	})
 })
 
+// dynamic redirect to country pages for searched country when user hits submit button
 function countrySearch() {
 	var searchedCountry = countrySelector.val()
 	if (countryNames.includes(searchedCountry)) {
-		document.location.replace('./country.html?country=' + searchedCountry)
-	}
-	else {
-		var errorMessage = $("<p id='alert-message'></p>").text("That is not a supported country.")
+		localStorage.setItem('SavedSearch', searchedCountry);
+		document.location.replace('./country.html?country=' + searchedCountry);
+	} else {
+		var errorMessage = $("<p id=alert-message></p>").text("That is not a supported country.")
 		$('#countryRef').append(errorMessage)
-		}
-	}
+		}}
 
 function displayBrowse () {
 	document.location.replace(browsePage);
