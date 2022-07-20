@@ -34,6 +34,7 @@ var getCountryInfo = async (countryName) => {
 			const zoom = response.maps.zoom;
 			
 			setMap(latitude, longitude, zoom);
+			saveCountryToLocalStorage(countryName);
 		})
 		
 };

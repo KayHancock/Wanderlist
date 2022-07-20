@@ -39,11 +39,12 @@ function countrySearch() {
 	console.log(country);
 	if (countryNames.includes(countrySelector.val())) {
 		var countryEl = document.createElement('a');
-	countryEl.setAttribute('href', './country.html?country=' + country);
-	countryEl.setAttribute('id', 'country-anchor')
+		countryEl.setAttribute('href', './country.html?country=' + country);
+		countryEl.setAttribute('id', 'country-anchor')
 
-	countryEl.innerHTML = country;
-	countryRef.appendChild(countryEl);
+		countryEl.innerHTML = country;
+		countryRef.appendChild(countryEl);
+		saveCountryToLocalStorage(country)
 	} else {
 		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list");
 		$("#countryRef").append(alertMessage);
@@ -102,20 +103,37 @@ searchBtn.addEventListener("click", countrySearch);
 function getCountryToLocalStorage(){
 	//console.log(localStorage.getItem("list-country"));
 	return localStorage.getItem("list-country") ? JSON.parse(localStorage.getItem("list-country")) : [];
-   }
+}
    
-   function saveCountryToLocalStorage(country){
-    //console.log("imhere");
+function saveCountryToLocalStorage(countrySearch){
    let countries = getCountryToLocalStorage()
    
-   countries.push(country);
+   countries.push(countrySearch);
    
    localStorage.setItem("list-country",JSON.stringify(countries));
-   //console.log(countries);
-   
-   }
+}
 
-   saveCountryToLocalStorage ('paris')
-   //console.log("imhere");
-   //getCountryToLocalStorage ()
-   //console.log("imhere");
+window.addEventListener("load", () => {
+	displaySearchHistory()
+
+})
+
+function displaySearchHistory() {
+	const countries = getCountryToLocalStorage();
+	//console.log()
+	const ul = document.createElement("ul")
+	countries.map((country) => {
+		const li = document.createElement("li");
+	
+		li.addEventListener("click", (e) => {
+			// call search function
+			console.log(e.target.textContent)
+		})
+	
+		li.textContent = country;
+		ul.appendChild(li);
+	})
+	document.getElementById("mo-whi").appendChild(ul)
+};
+
+   
