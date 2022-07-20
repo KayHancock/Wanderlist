@@ -62,6 +62,7 @@ $("#surprise").click(function() {
 
 function countrySearch() {
 	var searchedCountry = countrySelector.val()
+	console.log(searchedCountry);
 	if (countryNames.includes(searchedCountry)) {
 		document.location.replace('./country.html?country=' + searchedCountry)
 	}

@@ -1,5 +1,6 @@
 // CountryName
 var countryNameEl = document.querySelector("#countryName");
+console.log(countryNameEl);
 
 // Neighboring Countries
 var neighboringCountryDescription = document.querySelector("#neighboringCountryDescription");
@@ -71,7 +72,9 @@ var surpriseBtn = document.getElementById("surprise");
 
 var getCountryInfo = async (countryName) => {
 	var queryString = document.location.search;
+	console.log(queryString);
 	var countryName = queryString.split('=')[1];
+	console.log(countryName);
 
 	if (countryName) {
 		countryNameEl.textContent = countryName;
@@ -247,28 +250,16 @@ var getCountryInfo = async (countryName) => {
 			currencyDescription.appendChild(currDescription);
 
 			// Currency info
-			if (response.currency.name === null && response.currency.symbol === null) {
+			if (response.currency.name === null) {
 				var curr = document.createElement("div");
 				curr.className = "curr";
 				curr.innerHTML = "No data found";
 				console.log(curr.innerHTML);
 				currencyInfo.appendChild(curr);
-			} else if (response.currency.name === null) {
-				var curr = document.createElement("div");
-				curr.className = "curr";
-				curr.innerHTML = "The currency in " + countryName + " is " + "(" + response.currency.symbol + ")";
-				console.log(curr.innerHTML);
-				currencyInfo.appendChild(curr);
-			} else if (response.currency.symbol === null) {
-				var curr = document.createElement("div");
-				curr.className = "curr";
-				curr.innerHTML = "The currency in " + countryName + " is " + response.currency.name;
-				console.log(curr.innerHTML);
-				currencyInfo.appendChild(curr);
 			} else {
 				var curr = document.createElement("div");
 				curr.className = "curr";
-				curr.innerHTML = "The currency in " + countryName + " is " + response.currency.name + " (" + response.currency.symbol + ")";
+				curr.innerHTML = "The currency in " + countryName + " is " + response.currency.name;
 				console.log(curr.innerHTML);
 				currencyInfo.appendChild(curr);
 			}
