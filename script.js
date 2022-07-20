@@ -28,7 +28,7 @@ fetch(travelRequestUrl)
 			}
 	})
 
-console.log(countryNames);
+
 
 // Autocomplete for country list in index.html search bar
 $(function () {
@@ -41,11 +41,18 @@ $(function () {
 });
 
 
+
 function countrySearch() {
 	var searchedCountry = countrySelector.val()
-	document.location.replace('./country.html?country=' + searchedCountry)
-	
-}
+	if (countryNames.includes(searchedCountry)) {
+		document.location.replace('./country.html?country=' + searchedCountry)
+	}
+	else {
+		var errorMessage = $("<p id='alert-message'></p>").text("That is not a supported country.")
+		$('#countryRef').append(errorMessage)
+		}
+
+	}
 
 function displayBrowse () {
 	document.location.replace(browsePage);
