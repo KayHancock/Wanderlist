@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="country.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Wallabie Travel Planner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Old+Standard+TT">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="title head is-1">
+    <header id="title" class="title head is-1">
         Wallabie Travel Planner
     </header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -24,7 +25,7 @@
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu body">
           <div class="navbar-start">
             <a id="home" class="navbar-item">
               Home
@@ -52,9 +53,9 @@
       </nav>
     <div class="section">
 
-    <main>
+    <main clas="body">
       <!-- Country name -->
-      <h2 class="countryName" id="countryName"><a href="#0"></a></h2>
+      <h2 class="countryName" id="countryName"></h2>
 
         <section class="box">
             <!-- Travelbriefing information -->
@@ -80,11 +81,6 @@
                 <h3 class="timezoneDescription" id="timezoneDescription"></h3>
                 <div class="timezoneInfo" id="timezoneInfo"></div>
               </div>
-              <!-- Visa requirements -->
-              <div class="visaRequirements" id="visaRequirements">
-                <h3 class="visaRequirementsDescription" id="visaRequirementsDescription"></h3>
-                <div class="visaRequirementsInfo" id="visaRequirementsInfo"></div> 
-              </div>
               <!-- Currency -->
               <div class="currency" id="currency">
                 <h3 class="currencyDescription" id="currencyDescription"></h3>
@@ -94,11 +90,6 @@
               <div class="language" id="language">
                 <h3 class="languageDescription" id="languageDescription"></h3>
                 <div class="languageInfo" id="languageInfo"></div>
-              </div>
-              <!-- Weather -->
-              <div class="weather" id="weather">
-                <h3 class="weatherDescription" id="weatherDescription"></h3>
-                <div class="weatherInfo" id="weatherInfo"></div>
               </div>
               <!-- Vaccinations and health -->
               <div class="vaccinationsHealth" id="vaccinationsHealth">
@@ -123,12 +114,6 @@
           <div id="map"></div>
         </div>
         <!--end google map-->
-
-        <aside>
-            <button>Plan Your Trip!</button>
-            <div id="kayakSearchWidgetContainer"></div>
-        </aside>
-
     </main>
 
     <!-- Link to google api -->

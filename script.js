@@ -77,6 +77,7 @@ $("#surprise").click(function() {
 // dynamic redirect to country pages for searched country when user hits submit button
 function countrySearch() {
 	var searchedCountry = countrySelector.val()
+	console.log(searchedCountry);
 	if (countryNames.includes(searchedCountry)) {
 		localStorage.setItem('SavedSearch', searchedCountry);
 		document.location.replace('./country.html?country=' + searchedCountry);
