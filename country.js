@@ -98,11 +98,14 @@ var getCountryInfo = async (countryName) => {
 			neighboringCountryDescription.appendChild(neighborDescription);
 
 			// Neighboring countries info
-			var neighbor = document.createElement("div");
-			neighbor.className = "neighbor";
-			neighbor.innerHTML = "Some countries that neighbor " + countryName + " include: " + response.neighbors[0].name + ", " + response.neighbors[1].name + ", " + response.neighbors[2].name + ", " + response.neighbors[3].name + ", " + response.neighbors[4].name;
-			console.log(neighbor.innerHTML);
-			neighboringCountryInfo.appendChild(neighbor);
+			for (i = 0; i < response.neighbors.length; i++ ) {
+				console.log(response.neighbors[i].name);
+				var neighbor = document.createElement("div");
+				neighbor.className = "neighbor";
+				neighbor.innerHTML = response.neighbors[i].name;
+				console.log(neighbor.innerHTML);
+				neighboringCountryInfo.appendChild(neighbor);
+			}
 
 			// Travel advise
 			console.log(response);
@@ -245,6 +248,30 @@ var getCountryInfo = async (countryName) => {
 			// Weather
 
 			// Vaccinations and health
+			console.log(response);
+			console.log(response.vaccinations);
+
+			// Vaccinations and health description
+			var healthDescription = document.createElement("div");
+			healthDescription.innerHTML = "Vaccinations and Health";
+			console.log(healthDescription.innerHTML);
+			vaccinationsHealthDescription.appendChild(healthDescription);
+
+			// Vaccinations and health info
+			for (i = 0; i < response.vaccinations.length; i++ ) {
+				console.log(response.vaccinations[i].name);
+				var healthName = document.createElement("div");
+				healthName.className = "healthName";
+				healthName.innerHTML = response.vaccinations[i].name;
+				console.log(healthName.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthName);
+				console.log(response.vaccinations[i].message);
+				var healthMessage = document.createElement("div");
+				healthMessage.className = "healthMessage";
+				healthMessage.innerHTML = response.vaccinations[i].message;
+				console.log(healthMessage.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthMessage);
+			}
 
 			// Telephone
 			console.log(response);
