@@ -68,7 +68,10 @@ fetch(travelRequestUrl)
 // Autocomplete for country list in index.html search bar
 $(function () {
 	$("#country-selector").autocomplete({
-		source: countryNames
+		source: countryNames,
+		classes:{
+			"ui-autocomplete": "highlight"
+		}
 	});
 });
 

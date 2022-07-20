@@ -5,3 +5,8 @@ nav {
 .head {
  text-align: center;
 }
+
+.ui-autocomplete {
+    border-radius: 10px;
+}
+
