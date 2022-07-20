@@ -73,7 +73,10 @@ var surpriseBtn = document.getElementById("surprise");
 var getCountryInfo = async (countryName) => {
 	var queryString = document.location.search;
 	console.log(queryString);
-	var countryName = queryString.split('=')[1];
+	var countryNameString = queryString.split('=')[1];
+	console.log(countryNameString);
+	console.log(countryNameString.replace('%20', ' '))
+	var countryName = countryNameString.replace('%20', ' ');
 	console.log(countryName);
 
 	if (countryName) {
