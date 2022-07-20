@@ -15,26 +15,6 @@ var searchBtn = document.getElementById("search");
 var countryRef = document.querySelector("#countryRef");
 
 // API Fetch Requests
-// Travel-Breifing on page
-function countrySearch() {
-	$("#country-anchor").remove();
-	$("#alert-message").remove();
-	var country = countrySelector.val();
-	console.log(country);
-	if (countryNames.includes(countrySelector.val())) {
-		var countryEl = document.createElement('a');
-	countryEl.setAttribute('href', './country.html?country=' + country);
-	countryEl.setAttribute('id', 'country-anchor')
-
-	countryEl.innerHTML = country;
-	countryRef.appendChild(countryEl);
-	} else {
-		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list");
-		$("#countryRef").append(alertMessage);
-	}
-
-}
-
 // create array of countries from TravelBriefing API
 fetch(travelRequestUrl)
 	.then(function (response) {
@@ -59,10 +39,11 @@ $(function () {
 	});
 });
 
-// Functions
-function countryLoad () {
-	countrySearch()
 
+function countrySearch() {
+	var searchedCountry = countrySelector.val()
+	document.location.replace('./country.html?country=' + searchedCountry)
+	
 }
 
 function displayBrowse () {
