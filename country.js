@@ -92,6 +92,15 @@ var getCountryInfo = async (countryName) => {
 			console.log(neighborDescription.innerHTML);
 			neighboringCountryDescription.appendChild(neighborDescription);
 
+			// Neighboring countries info if no data found
+			if (response.neighbors.length === 0) {
+				var neighbor = document.createElement("div");
+				neighbor.className = "neighbor";
+				neighbor.innerHTML = "No data found";
+				console.log(neighbor.innerHTML);
+				languageInfo.appendChild(neighbor);
+			}
+
 			// Neighboring countries info
 			for (i = 0; i < response.neighbors.length; i++ ) {
 				console.log(response.neighbors[i].name);
