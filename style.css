@@ -10,3 +10,10 @@ nav {
     border-radius: 10px;
 }
 
+.body {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+#title {
+    font-family: 'Edu TAS Beginner', cursive !important;
+}
