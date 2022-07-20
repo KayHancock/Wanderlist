@@ -13,6 +13,7 @@ var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
 var countryRef = document.querySelector("#countryRef");
+var countryEl = document.createElement('a');
 
 // API Fetch Requests
 // create array of countries from TravelBriefing API
@@ -27,7 +28,7 @@ fetch(travelRequestUrl)
 			}
 	})
 
-	console.log(countryNames);
+console.log(countryNames);
 
 // Autocomplete for country list in index.html search bar
 $(function () {
@@ -60,7 +61,6 @@ function displayDoc () {
 
 // Event Listeners
 browseBtn.addEventListener("click", displayBrowse);
-homeBtn.addEventListener("click", displayHome);
 docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
 surpriseBtn.addEventListener("click", displayCountry);
