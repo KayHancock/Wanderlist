@@ -85,17 +85,21 @@ var getCountryInfo = async (countryName) => {
 			// Neighboring countries
 			console.log(response);
 			console.log(response.neighbors);
-			console.log(response.neighbors[0].name);
-			console.log(response.neighbors[1].name);
-			console.log(response.neighbors[2].name);
-			console.log(response.neighbors[3].name);
-			console.log(response.neighbors[4].name);
 
 			// Neighboring countries description
 			var neighborDescription = document.createElement("div");
 			neighborDescription.innerHTML = "Neighboring Countries";
 			console.log(neighborDescription.innerHTML);
 			neighboringCountryDescription.appendChild(neighborDescription);
+
+			// Neighboring countries info if no data found
+			if (response.neighbors.length === 0) {
+				var neighbor = document.createElement("div");
+				neighbor.className = "neighbor";
+				neighbor.innerHTML = "No data found";
+				console.log(neighbor.innerHTML);
+				languageInfo.appendChild(neighbor);
+			}
 
 			// Neighboring countries info
 			for (i = 0; i < response.neighbors.length; i++ ) {
@@ -230,7 +234,6 @@ var getCountryInfo = async (countryName) => {
 			// Language
 			console.log(response);
 			console.log(response.language);
-			console.log(response.language[0].language);
 
 			// Language description
 			var langDescription = document.createElement("div");
@@ -238,12 +241,24 @@ var getCountryInfo = async (countryName) => {
 			console.log(langDescription.innerHTML);
 			languageDescription.appendChild(langDescription);
 
+			// Language info if no data found
+			if (response.language.length === 0) {
+				var lang = document.createElement("div");
+				lang.className = "lang";
+				lang.innerHTML = "No data found";
+				console.log(lang.innerHTML);
+				languageInfo.appendChild(lang);
+			} 
+
 			// Language info
-			var lang = document.createElement("div");
-			lang.className = "lang";
-			lang.innerHTML = "The language spoken in " + countryName + " is " + response.language[0].language;
-			console.log(lang.innerHTML);
-			languageInfo.appendChild(lang);
+			for (i = 0; i < response.language.length; i++ ) {
+				console.log(response.language[i].language);
+				var lang = document.createElement("div");
+				lang.className = "lang";
+				lang.innerHTML = response.language[i].language;
+				console.log(lang.innerHTML);
+				languageInfo.appendChild(lang);
+			}
 
 			// Weather
 
@@ -256,6 +271,15 @@ var getCountryInfo = async (countryName) => {
 			healthDescription.innerHTML = "Vaccinations and Health";
 			console.log(healthDescription.innerHTML);
 			vaccinationsHealthDescription.appendChild(healthDescription);
+
+			// Language info if no data found
+			if (response.vaccinations.length === 0) {
+				var healthMessage = document.createElement("div");
+				healthMessage.className = "healthMessage";
+				healthMessage.innerHTML = "No data found";
+				console.log(healthMessage.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthMessage);
+			}
 
 			// Vaccinations and health info
 			for (i = 0; i < response.vaccinations.length; i++ ) {
@@ -290,7 +314,7 @@ var getCountryInfo = async (countryName) => {
 			// Calling code telephone info
 			var callingCode = document.createElement("div");
 			callingCode.className = "callingCode";
-			callingCode.innerHTML = " 📞 +" + response.telephone.calling_code;
+			callingCode.innerHTML = " 📞 " + response.telephone.calling_code;
 			console.log(callingCode.innerHTML);
 			telephoneInfo.appendChild(callingCode);
 
