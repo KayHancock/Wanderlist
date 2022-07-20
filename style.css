@@ -17,3 +17,7 @@ nav {
 #title {
     font-family: 'Edu TAS Beginner', cursive !important;
 }
+
+.countryList {
+    display: block;
+}

@@ -25,6 +25,7 @@ function displayBrowse () {
 				var browseCountry = document.createElement('a');
 				browseCountry.setAttribute('href', './country.html?country=' + data[i].name);
 				browseCountry.innerHTML = data[i].name;
+				browseCountry.classList.add("countryList");
 				$("#countryList").append(browseCountry);
 			}	
 		})
