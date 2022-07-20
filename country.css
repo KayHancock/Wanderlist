@@ -25,6 +25,7 @@
     color: white;
     background-color: darkblue;
     padding-left: 20px;
+    padding-right: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -32,7 +33,7 @@
 /* .neighboringCountryInfo, .travelAdviseInfo, .drinkingWaterInfo, .visaRequirementsInfo, .timezoneInfo, .currencyInfo, .languageInfo, .telephoneInfo, .electricityInfo {
 } */
 
-.neighbor, .adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
+.neighbor, .advise, .adviseCA, .adviseUA, .water, .time, .curr, .lang, .callingCode, .ambulance, .fire, .police, .voltage, .frequency, .plug {
     font-family: "Old Standard TT", serif;
     font-size: 20px;
     color: black;
@@ -58,7 +59,7 @@
 
 .healthMessage {
     font-family: "Old Standard TT", serif;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 5px;
     padding-left: 20px;
     color: black;
