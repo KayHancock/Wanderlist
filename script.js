@@ -16,36 +16,6 @@ var countryRef = document.querySelector("#countryRef");
 var countryEl = document.createElement('a');
 
 // API Fetch Requests
-
-// Hotel API
-var options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b9572fd035msh13565d5f0f8a81bp1f763bjsn7e7b5a735ea3',
-		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
-	}
-};
-
-
-// Travel-Breifing on page
-function countrySearch() {
-	$("#country-anchor").remove();
-	$("#alert-message").remove();
-	var country = countrySelector.val();
-	console.log(country);
-	if (countryNames.includes(countrySelector.val())) {
-	countryEl.setAttribute('href', './country.html?country=' + country);
-	countryEl.setAttribute('id', 'country-anchor')
-
-	countryEl.innerHTML = country;
-	countryRef.appendChild(countryEl);
-	} else {
-		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list or click 'Surprise Me'");
-		$("#countryRef").append(alertMessage);
-	}
-
-}
-
 // create array of countries from TravelBriefing API
 fetch(travelRequestUrl)
 	.then(function (response) {
@@ -58,7 +28,7 @@ fetch(travelRequestUrl)
 			}
 	})
 
-console.log(countryNames);
+
 
 // Autocomplete for country list in index.html search bar
 $(function () {
@@ -70,7 +40,6 @@ $(function () {
 	});
 });
 
-// Functions
 
 // generate random country when user clicks 'surprise me'
 $("#surprise").click(function() {
@@ -91,6 +60,21 @@ $("#surprise").click(function() {
 	})
 })
 
+function countrySearch() {
+	var searchedCountry = countrySelector.val()
+	if (countryNames.includes(searchedCountry)) {
+		document.location.replace('./country.html?country=' + searchedCountry)
+	}
+	else {
+		var errorMessage = $("<p id='alert-message'></p>").text("That is not a supported country.")
+		$('#countryRef').append(errorMessage)
+		}
+
+	}
+
+function displayBrowse () {
+	document.location.replace(browsePage);
+}
 
 $("#browse").click(function() {
 	document.location.replace(browsePage);

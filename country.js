@@ -99,17 +99,21 @@ var getCountryInfo = async (countryName) => {
 			// Neighboring countries
 			console.log(response);
 			console.log(response.neighbors);
-			console.log(response.neighbors[0].name);
-			console.log(response.neighbors[1].name);
-			console.log(response.neighbors[2].name);
-			console.log(response.neighbors[3].name);
-			console.log(response.neighbors[4].name);
 
 			// Neighboring countries description
 			var neighborDescription = document.createElement("div");
 			neighborDescription.innerHTML = "Neighboring Countries";
 			console.log(neighborDescription.innerHTML);
 			neighboringCountryDescription.appendChild(neighborDescription);
+
+			// Neighboring countries info if no data found
+			if (response.neighbors.length === 0) {
+				var neighbor = document.createElement("div");
+				neighbor.className = "neighbor";
+				neighbor.innerHTML = "No data found";
+				console.log(neighbor.innerHTML);
+				languageInfo.appendChild(neighbor);
+			}
 
 			// Neighboring countries info
 			for (i = 0; i < response.neighbors.length; i++ ) {
@@ -124,13 +128,6 @@ var getCountryInfo = async (countryName) => {
 			// Travel advise
 			console.log(response);
 			console.log(response.advise);
-			console.log(response.advise);
-			console.log(response.advise.CA);
-			console.log(response.advise.UA);
-			console.log(response.advise.CA.advise);
-			console.log(response.advise.UA.advise);
-			console.log(response.advise.CA.url);
-			console.log(response.advise.UA.url);
 
 			// Travel advise description
 			var adviseDescription = document.createElement("div");
@@ -139,51 +136,55 @@ var getCountryInfo = async (countryName) => {
 			travelAdviseDescription.appendChild(adviseDescription);
 
 			// Canadian government travel advise summary
-			var adviseCA = document.createElement("div");
-			adviseCA.className = "adviseCA";
-			console.log(response.advise.CA.advise);
-			adviseCA.innerHTML = "Canadian government: " + response.advise.CA.advise + " in " + countryName;
-			console.log(adviseCA.innerHTML);
-			travelAdviseInfo.appendChild(adviseCA);
+			if (response.advise.CA) {
+				var adviseCA = document.createElement("div");
+				adviseCA.className = "adviseCA";
+				console.log(response.advise.CA.advise);
+				adviseCA.innerHTML = "Canadian government: " + response.advise.CA.advise + " in " + countryName;
+				console.log(adviseCA.innerHTML);
+				travelAdviseInfo.appendChild(adviseCA);
 
-			// Full report from Canadian govenment
-			// Create anchor element
-			var urlCA = document.createElement('a');
-			// Add class name to anchor element
-			urlCA.className = "urlCA"; 
-			// Create the text node for anchor element
-			var link = document.createTextNode("Full Report from Canadian Government");
-			// Append the text node to anchor element
-			urlCA.appendChild(link); 
-			// Set the title
-			urlCA.title = "Full Report from Canadian Government";
-			// Set the href property
-			urlCA.href = response.advise.CA.url;
-			// Append the anchor element to the body
-			travelAdviseInfo.appendChild(urlCA); 
+				// Full report from Canadian govenment
+				// Create anchor element
+				var urlCA = document.createElement('a');
+				// Add class name to anchor element
+				urlCA.className = "urlCA"; 
+				// Create the text node for anchor element
+				var link = document.createTextNode("Full Report from Canadian Government");
+				// Append the text node to anchor element
+				urlCA.appendChild(link); 
+				// Set the title
+				urlCA.title = "Full Report from Canadian Government";
+				// Set the href property
+				urlCA.href = response.advise.CA.url;
+				// Append the anchor element to the body
+				travelAdviseInfo.appendChild(urlCA);
+			} 
 
 			// Australian government travel advise summary
-			var adviseUA = document.createElement("div");
-			adviseUA.className = "adviseUA";
-			adviseUA.innerHTML = "Austrailian government: " + response.advise.UA.advise + " in " + countryName;
-			console.log(adviseUA.innerHTML);
-			travelAdviseInfo.appendChild(adviseUA);
+			if (response.advise.UA) {
+				var adviseUA = document.createElement("div");
+				adviseUA.className = "adviseUA";
+				adviseUA.innerHTML = "Austrailian government: " + response.advise.UA.advise + " in " + countryName;
+				console.log(adviseUA.innerHTML);
+				travelAdviseInfo.appendChild(adviseUA);
 
-			// Full report from Australian govenment
-			// Create anchor element.
-			var urlUA = document.createElement('a');
-			// Add class name to anchor element
-			urlUA.className = "urlUA";  
-			// Create the text node for anchor element.
-			var link = document.createTextNode("Full Report from Australian Government");
-			// Append the text node to anchor element.
-			urlUA.appendChild(link); 
-			// Set the title.
-			urlUA.title = "Full Report from Australian Government";
-			// Set the href property.
-			urlUA.href = response.advise.UA.url;
-			// Append the anchor element to the body.
-			travelAdviseInfo.appendChild(urlUA);
+				// Full report from Australian govenment
+				// Create anchor element.
+				var urlUA = document.createElement('a');
+				// Add class name to anchor element
+				urlUA.className = "urlUA";  
+				// Create the text node for anchor element.
+				var link = document.createTextNode("Full Report from Australian Government");
+				// Append the text node to anchor element.
+				urlUA.appendChild(link); 
+				// Set the title.
+				urlUA.title = "Full Report from Australian Government";
+				// Set the href property.
+				urlUA.href = response.advise.UA.url;
+				// Append the anchor element to the body.
+				travelAdviseInfo.appendChild(urlUA);
+			}
 
 			// Drinking water
 			console.log(response);
@@ -244,7 +245,6 @@ var getCountryInfo = async (countryName) => {
 			// Language
 			console.log(response);
 			console.log(response.language);
-			console.log(response.language[0].language);
 
 			// Language description
 			var langDescription = document.createElement("div");
@@ -252,12 +252,24 @@ var getCountryInfo = async (countryName) => {
 			console.log(langDescription.innerHTML);
 			languageDescription.appendChild(langDescription);
 
+			// Language info if no data found
+			if (response.language.length === 0) {
+				var lang = document.createElement("div");
+				lang.className = "lang";
+				lang.innerHTML = "No data found";
+				console.log(lang.innerHTML);
+				languageInfo.appendChild(lang);
+			} 
+
 			// Language info
-			var lang = document.createElement("div");
-			lang.className = "lang";
-			lang.innerHTML = "The language spoken in " + countryName + " is " + response.language[0].language;
-			console.log(lang.innerHTML);
-			languageInfo.appendChild(lang);
+			for (i = 0; i < response.language.length; i++ ) {
+				console.log(response.language[i].language);
+				var lang = document.createElement("div");
+				lang.className = "lang";
+				lang.innerHTML = response.language[i].language;
+				console.log(lang.innerHTML);
+				languageInfo.appendChild(lang);
+			}
 
 			// Weather
 
@@ -270,6 +282,15 @@ var getCountryInfo = async (countryName) => {
 			healthDescription.innerHTML = "Vaccinations and Health";
 			console.log(healthDescription.innerHTML);
 			vaccinationsHealthDescription.appendChild(healthDescription);
+
+			// Language info if no data found
+			if (response.vaccinations.length === 0) {
+				var healthMessage = document.createElement("div");
+				healthMessage.className = "healthMessage";
+				healthMessage.innerHTML = "No data found";
+				console.log(healthMessage.innerHTML);
+				vaccinationsHealthInfo.appendChild(healthMessage);
+			}
 
 			// Vaccinations and health info
 			for (i = 0; i < response.vaccinations.length; i++ ) {
@@ -304,7 +325,7 @@ var getCountryInfo = async (countryName) => {
 			// Calling code telephone info
 			var callingCode = document.createElement("div");
 			callingCode.className = "callingCode";
-			callingCode.innerHTML = " 📞 +" + response.telephone.calling_code;
+			callingCode.innerHTML = " 📞 " + response.telephone.calling_code;
 			console.log(callingCode.innerHTML);
 			telephoneInfo.appendChild(callingCode);
 
