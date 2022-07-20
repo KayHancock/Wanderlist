@@ -75,8 +75,9 @@ var getCountryInfo = async (countryName) => {
 	console.log(queryString);
 	var countryNameString = queryString.split('=')[1];
 	console.log(countryNameString);
-	console.log(countryNameString.replace('%20', ' '))
-	var countryName = countryNameString.replace('%20', ' ');
+	var re = /%20/gi;
+	console.log(countryNameString.replace(re, ' '))
+	var countryName = countryNameString.replace(re, ' ');
 	console.log(countryName);
 
 	if (countryName) {
