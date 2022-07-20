@@ -41,6 +41,24 @@ $(function () {
 });
 
 
+// generate random country when user clicks 'surprise me'
+$("#surprise").click(function() {
+	var countryNames = [];
+	$("#country-anchor").remove();
+	$("#alert-message").remove();
+	fetch(travelRequestUrl)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				countryNames.push(data[i].name);
+				var randomIndex = Math.floor(Math.random() * countryNames.length);
+				document.location.replace('./country.html?country=' + countryNames[randomIndex]);
+				}
+	})
+})
 
 function countrySearch() {
 	var searchedCountry = countrySelector.val()
@@ -51,23 +69,20 @@ function countrySearch() {
 		var errorMessage = $("<p id='alert-message'></p>").text("That is not a supported country.")
 		$('#countryRef').append(errorMessage)
 		}
-
 	}
 
 function displayBrowse () {
 	document.location.replace(browsePage);
 }
 
-function displayHome () {
-	document.location.replace(homePage);
-}
+$("#browse").click(function() {
+	document.location.replace(browsePage);
+})
 
-function displayDoc () {
+$("#docs").click(function() {
 	document.location.replace(docPage);
-}
+})
+
 
 // Event Listeners
-browseBtn.addEventListener("click", displayBrowse);
-docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
-surpriseBtn.addEventListener("click", displayCountry);
