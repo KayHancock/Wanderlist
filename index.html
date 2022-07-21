@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css" />
   <title>Wanderlist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +12,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-  <header id="title" class="title head is-1 has-background-primary">
+  <header id="title" class="title head is-1">
     Wanderlist
   </header>
-  <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger black" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -30,15 +30,15 @@
 
     <div id="navbarBasicExample" class="navbar-menu body">
       <div class="navbar-start">
-        <a id="home" class="navbar-item">
+        <a id="home" class="navbar-item black">
           Home
         </a>
 
-        <a id="browse" class="navbar-item">
+        <a id="browse" class="navbar-item black">
           Browse Countries
         </a>
 
-        <a id="docs" class="navbar-item">
+        <a id="docs" class="navbar-item black">
           Documentation
         </a>
       </div>
@@ -46,7 +46,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a id="surprise" class="button is-primary">
+            <a id="surprise" class="button">
               <strong>Surprise Me</strong>
             </a>
           </div>
@@ -54,13 +54,13 @@
       </div>
     </div>
   </nav>
-  <div class="section has-background-primary">
+  <div class="section">
 
     <div>
       <h3 class="body title is-4">Start your adventure here: </h3>
       <input class="input is-info is-rounded is-medium" id="country-selector" type="text"
         placeholder="Where do you want to go?">
-      <button id="search" class="button is-primary is-normal mt-4">Submit</button>
+      <button id="search" class="button is-normal mt-4">Submit</button>
     </div>
     <div id="saved-searches" class="is-hidden title is-4 is-spaced">
       <h3 class="subtitle is-5 mt-4 mb-1">Pick up where you left off:</h3>
