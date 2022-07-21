@@ -13,45 +13,9 @@ var travelPage = 'travel.html';
 var surpriseBtn = document.getElementById("surprise");
 var searchBtn = document.getElementById("search");
 var countryRef = document.querySelector("#countryRef");
+var countryEl = document.createElement('a');
 
 // API Fetch Requests
-
-// Hotel API
-var options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b9572fd035msh13565d5f0f8a81bp1f763bjsn7e7b5a735ea3',
-		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
-	}
-};
-
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=new%20york&locale=en_US&currency=USD', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-
-// Travel-Breifing on page
-function countrySearch() {
-	$("#country-anchor").remove();
-	$("#alert-message").remove();
-	var country = countrySelector.val();
-	console.log(country);
-	if (countryNames.includes(countrySelector.val())) {
-		var countryEl = document.createElement('a');
-		countryEl.setAttribute('href', './country.html?country=' + country);
-		countryEl.setAttribute('id', 'country-anchor')
-
-		countryEl.innerHTML = country;
-		countryRef.appendChild(countryEl);
-		saveCountryToLocalStorage(country)
-	} else {
-		var alertMessage = $("<p id='alert-message'></p>").text("Please select a country from the dropdown list");
-		$("#countryRef").append(alertMessage);
-	}
-
-}
-
 // create array of countries from TravelBriefing API
 fetch(travelRequestUrl)
 	.then(function (response) {
@@ -64,37 +28,78 @@ fetch(travelRequestUrl)
 			}
 	})
 
-	console.log(countryNames);
+
 
 // Autocomplete for country list in index.html search bar
 $(function () {
 	$("#country-selector").autocomplete({
-		source: countryNames
+		source: countryNames,
+		classes:{
+			"ui-autocomplete": "highlight"
+		}
 	});
 });
 
-// Functions
-function countryLoad () {
-	countrySearch()
+// Saved search history on homepage
 
+function searchHistory () {
+	var searchedCountry = localStorage.getItem('SavedSearch');
+	if (typeof searchedCountry === 'string') {
+		$('#saved-searches').removeClass("is-hidden");
+		var browseCountry = document.createElement('a');
+		browseCountry.setAttribute('href', './country.html?country=' + searchedCountry.innerHTML);
+		browseCountry.innerHTML = searchedCountry;
+		$("#saved-searches").append(browseCountry);
+	}
 }
+
+searchHistory();
+
+// generate random country when user clicks 'surprise me'
+$("#surprise").click(function() {
+	var countryNames = [];
+	$("#country-anchor").remove();
+	$("#alert-message").remove();
+	fetch(travelRequestUrl)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				countryNames.push(data[i].name);
+				var randomIndex = Math.floor(Math.random() * countryNames.length);
+				document.location.replace('./country.html?country=' + countryNames[randomIndex]);
+				}
+	})
+})
+
+// dynamic redirect to country pages for searched country when user hits submit button
+function countrySearch() {
+	var searchedCountry = countrySelector.val()
+	console.log(searchedCountry);
+	if (countryNames.includes(searchedCountry)) {
+		localStorage.setItem('SavedSearch', searchedCountry);
+		document.location.replace('./country.html?country=' + searchedCountry);
+	} else {
+		var errorMessage = $("<p id=alert-message></p>").text("That is not a supported country.")
+		$('#countryRef').append(errorMessage)
+		}}
 
 function displayBrowse () {
 	document.location.replace(browsePage);
 }
 
-function displayHome () {
-	document.location.replace(homePage);
-}
+$("#browse").click(function() {
+	document.location.replace(browsePage);
+})
 
-function displayDoc () {
+$("#docs").click(function() {
 	document.location.replace(docPage);
-}
+})
+
 
 // Event Listeners
-browseBtn.addEventListener("click", displayBrowse);
-homeBtn.addEventListener("click", displayHome);
-docBtn.addEventListener("click", displayDoc);
 searchBtn.addEventListener("click", countrySearch);
 //surpriseBtn.addEventListener("click", displayCountry);
 
