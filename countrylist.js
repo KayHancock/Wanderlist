@@ -62,3 +62,14 @@ $("#home").click(function() {
 $("#docs").click(function() {
 	document.location.replace(docPage);
 })
+
+//Navbar Hamburger Toggle
+$(document).ready(function() {
+
+	$(".navbar-burger").click(function() {
+  
+		$(".navbar-burger").toggleClass("is-active");
+		$(".navbar-menu").toggleClass("is-active");
+  
+	});
+  });
