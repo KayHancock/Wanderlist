@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Wallabie Travel Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="title head is-1">
+    <header id="title" class="title head is-1">
         Wallabie Travel Planner
     </header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -21,7 +26,7 @@
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu body">
             <div class="navbar-start">
               <a id="home" class="navbar-item">
                 Home
@@ -47,7 +52,7 @@
           </div>
         </div>
       </nav>
-    <div class="box">
+    <div class="box body">
         <h2 class="title">How We Did It</h2>
         <p>When considering what would be most helpful in future travel planning, we searched high and low for the best free APIs out there. After
         an exhaustive search, we found the <a href="https://rapidapi.com/blog/directory/travelbriefingorg-public/" target="_blank">TravelBriefing API</a>. This API
@@ -56,6 +61,8 @@
      
 
     </div>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="doc.js"></script>
 </body>
 </html>

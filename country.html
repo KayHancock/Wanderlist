@@ -7,9 +7,15 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Wallabie Travel Planner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="title head is-1">
+    <header id="title" class="title head is-1">
         Wallabie Travel Planner
     </header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -21,7 +27,7 @@
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu body">
           <div class="navbar-start">
             <a id="home" class="navbar-item">
               Home
@@ -49,42 +55,74 @@
       </nav>
     <div class="section">
 
-    <main>
-        <h2 class="title">Country Name</h2>
-   
-        <section class="box">
-            <h3>Currency Information</h3>
-            <div></div>
-        </section>
+    <main class="body">
+      <!-- Country name -->
+      <h2 class="countryName header title is-2 has-text-centered" id="countryName"></h2>
 
-        <section class="box">
-            <h3>TravelBriefing Information</h3>
+        <section>
             <div>
-              <h4 class="countryName" id="countryName"></h4>
-              <div class="drinkingWater" id="drinkingWater">
-                <h3 class="drinkingWaterDescription" id="drinkingWaterDescription"></h3>
+              <!-- Neighboring countries -->
+              <div class="neighboringCountry box" id="neighboringCountry">
+                <h3 class="neighboringCountryDescription title is-4" id="neighboringCountryDescription"></h3>
+                <div class="neighboringCountryInfo" id="neighboringCountryInfo"></div>
+              </div>
+              <!-- Travel advice -->
+              <div class="travelAdvise box" id="travelAdvise">
+                <h3 class="travelAdviseDescription title is-4" id="travelAdviseDescription"></h3>
+                <div class="travelAdviseInfo" id="travelAdviseInfo"></div>
+              </div>
+              <!-- Drinking water -->
+              <div class="drinkingWater box" id="drinkingWater">
+                <h3 class="drinkingWaterDescription title is-4" id="drinkingWaterDescription"></h3>
                 <div class="drinkingWaterInfo" id="drinkingWaterInfo"></div>
+              </div>
+              <!-- Timezone -->
+              <div class="timezone box" id="timezone">
+                <h3 class="timezoneDescription title is-4" id="timezoneDescription"></h3>
+                <div class="timezoneInfo" id="timezoneInfo"></div>
+              </div>
+              <!-- Currency -->
+              <div class="currency box" id="currency">
+                <h3 class="currencyDescription title is-4" id="currencyDescription"></h3>
+                <div class="currencyInfo" id="currencyInfo"></div>
+              </div>
+              <!-- Language -->
+              <div class="language box" id="language">
+                <h3 class="languageDescription title is-4" id="languageDescription"></h3>
+                <div class="languageInfo" id="languageInfo"></div>
+              </div>
+              <!-- Vaccinations and health -->
+              <div class="vaccinationsHealth box" id="vaccinationsHealth">
+                <h3 class="vaccinationsHealthDescription title is-4" id="vaccinationsHealthDescription"></h3>
+                <div class="vaccinationsHealthInfo" id="vaccinationsHealthInfo"></div>
+              </div>
+              <!-- Telephone -->
+              <div class="telephone box" id="telephone">
+                <h3 class="telephoneDescription title is-4" id="telephoneDescription"></h3>
+                <div class="telephoneInfo" id="telephoneInfo"></div>
+              </div>
+              <!-- Electricity -->
+              <div class="electricity box" id="electricity">
+                <h3 class="electricityDescription title is-4" id="electricityDescription"></h3>
+                <div class="electricityInfo" id="electricityInfo"></div>
               </div>
             </div>
         </section>
 
         <!--google map-->
         <div class="box">
-          <div id="map"></div>
+          <h3 class="title is-4">Location</h3>
+          <div id="map" class="is-justify-content-center"></div>
         </div>
         <!--end google map-->
-
-        <aside>
-            <button>Plan Your Trip!</button>
-            <div id="kayakSearchWidgetContainer"></div>
-        </aside>
-
     </main>
 
+    <!-- Link to google api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+    <!-- Links to jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script type="text/JavaScript" src="https://www.kayak.com/affiliate/widget-v2.js"></script>
+    <!-- Link to country.js -->
     <script src="country.js"></script>
 </body>
 </html>

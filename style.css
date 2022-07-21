@@ -3,10 +3,29 @@ nav {
 }
 
 .head {
- text-align: center;
+    text-align: center;
 }
 
-/* google map */
+.ui-autocomplete {
+    border-radius: 10px;
+}
+
+.body {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+#title {
+    font-family: 'Edu TAS Beginner', cursive !important;
+}
+
+.countryList {
+    display: block;
+}
+
+
 #map {
+    width: 500px;
     height: 500px;
+    display: flex;
+    justify-content: center !important;
 }

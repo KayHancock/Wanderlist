@@ -7,9 +7,15 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Wallabie Travel Planner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="title head is-1">
+    <header id="title" class="title head is-1">
         Wallabie Travel Planner
     </header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -21,7 +27,7 @@
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu body">
             <div class="navbar-start">
               <a id="home" class="navbar-item">
                 Home
@@ -47,13 +53,11 @@
           </div>
         </div>
       </nav>
-    <div class="box">
+    <div id="countryList" class="box body">
         <h2 class="title">Supported Countries:</h2>
-        <p id="countrylist">
-        </p>
-     
-
     </div>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="countrylist.js"></script>
 </body>
 </html>
