@@ -5,6 +5,7 @@ nav {
 
 .navbar-item {
     border-radius: 10px;
+    font-weight: 600;
 }
 
 .head {
@@ -26,6 +27,7 @@ html {
 #title {
     font-family: 'Edu TAS Beginner', cursive !important;
     color: #2E2B2B !important;
+    font-size: 4rem !important;
 }
 
 .countryList {
