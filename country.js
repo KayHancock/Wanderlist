@@ -348,13 +348,13 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.calling_code === null) {
 				var callingCode = document.createElement("div");
 				callingCode.className = "callingCode";
-				callingCode.innerHTML = " 📞 " + "No data found.";
+				callingCode.innerHTML = " Calling Code: " + "No data found.";
 				console.log(callingCode.innerHTML);
 				telephoneInfo.appendChild(callingCode);
 			} else {
 				var callingCode = document.createElement("div");
 				callingCode.className = "callingCode";
-				callingCode.innerHTML = " 📞 " + response.telephone.calling_code;
+				callingCode.innerHTML = " Calling Code: " + response.telephone.calling_code;
 				console.log(callingCode.innerHTML);
 				telephoneInfo.appendChild(callingCode);
 			}
@@ -363,13 +363,13 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.ambulance === "") {
 				var ambulance = document.createElement("div");
 				ambulance.className = "ambulance";
-				ambulance.innerHTML = "🚑 " + "No data found.";
+				ambulance.innerHTML = "Ambulance: " + "No data found.";
 				console.log(ambulance.innerHTML);
 				telephoneInfo.appendChild(ambulance);
 			} else {
 				var ambulance = document.createElement("div");
 				ambulance.className = "ambulance";
-				ambulance.innerHTML = "🚑 " + response.telephone.ambulance;
+				ambulance.innerHTML = "Ambulance: " + response.telephone.ambulance;
 				console.log(ambulance.innerHTML);
 				telephoneInfo.appendChild(ambulance);
 			}
@@ -378,13 +378,13 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.fire === "") {
 				var fire = document.createElement("div");
 				fire.className = "fire";
-				fire.innerHTML = "🔥 " + "No data found.";
+				fire.innerHTML = "Fire: " + "No data found.";
 				console.log(fire.innerHTML);
 				telephoneInfo.appendChild(fire);
 			} else {
 				var fire = document.createElement("div");
 				fire.className = "fire";
-				fire.innerHTML = "🔥 " + response.telephone.fire;
+				fire.innerHTML = "Fire: " + response.telephone.fire;
 				console.log(fire.innerHTML);
 				telephoneInfo.appendChild(fire);
 			}
@@ -393,13 +393,13 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.police === "") {
 				var police = document.createElement("div");
 				police.className = "police";
-				police.innerHTML = "🚓 " + "No data found.";
+				police.innerHTML = "Police: " + "No data found.";
 				console.log(police.innerHTML);
 				telephoneInfo.appendChild(police);
 			} else {
 				var police = document.createElement("div");
 				police.className = "police";
-				police.innerHTML = "🚓 " + response.telephone.police;
+				police.innerHTML = "Police: " + response.telephone.police;
 				console.log(police.innerHTML);
 				telephoneInfo.appendChild(police);
 			}
