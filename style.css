@@ -3,6 +3,10 @@ nav {
     color: #FDF6F6 !important;
 }
 
+.navbar-item {
+    border-radius: 10px;
+}
+
 .head {
     text-align: center;
 }
