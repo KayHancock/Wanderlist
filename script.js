@@ -47,7 +47,7 @@ function searchHistory () {
 	if (typeof searchedCountry === 'string') {
 		$('#saved-searches').removeClass("is-hidden");
 		var browseCountry = document.createElement('a');
-		browseCountry.setAttribute('href', './country.html?country=' + searchedCountry.innerHTML);
+		browseCountry.setAttribute('href', './country.html?country=' + searchedCountry);
 		browseCountry.innerHTML = searchedCountry;
 		$("#saved-searches").append(browseCountry);
 	}
