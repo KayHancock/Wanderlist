@@ -82,6 +82,7 @@ function countrySearch() {
 		localStorage.setItem('SavedSearch', searchedCountry);
 		document.location.replace('./country.html?country=' + searchedCountry);
 	} else {
+		$("#countryRef").empty()
 		var errorMessage = $("<p id=alert-message></p>").text("That is not a supported country.")
 		$('#countryRef').append(errorMessage)
 		}}
