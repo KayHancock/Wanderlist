@@ -15,3 +15,4 @@ Travel Briefing API - allow access to information necessary for travellers to pr
 Google API - allow communication with Google Services and their integration to other services <br />
 Google fonts - ability to choose many more types of fonts to add personality
 ## Screenshot
+![Wanderlist](https://user-images.githubusercontent.com/104175474/180324309-52b41ab5-eab7-485a-83d5-8109a7927f23.png)
