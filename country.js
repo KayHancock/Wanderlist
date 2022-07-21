@@ -101,7 +101,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.neighbors.length === 0) {
 				var neighbor = document.createElement("div");
 				neighbor.className = "neighbor";
-				neighbor.innerHTML = "No data found";
+				neighbor.innerHTML = "No data found.";
 				console.log(neighbor.innerHTML);
 				languageInfo.appendChild(neighbor);
 			} else {
@@ -121,7 +121,7 @@ var getCountryInfo = async (countryName) => {
 
 			// Travel advise description
 			var adviseDescription = document.createElement("div");
-			adviseDescription.innerHTML = "Travel Advise";
+			adviseDescription.innerHTML = "Travel Advice";
 			console.log(adviseDescription.innerHTML);
 			travelAdviseDescription.appendChild(adviseDescription);
 
@@ -129,7 +129,7 @@ var getCountryInfo = async (countryName) => {
 				var advise = document.createElement("div");
 				advise.className = "advise";
 				console.log(response.advise);
-				advise.innerHTML = "No data found";
+				advise.innerHTML = "No data found.";
 				console.log(advise.innerHTML);
 				travelAdviseInfo.appendChild(advise);
 			}
@@ -200,7 +200,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.water.short === null) {
 				var water = document.createElement("div");
 				water.className = "water";
-				water.innerHTML = "No data found";
+				water.innerHTML = "No data found.";
 				console.log(water.innerHTML);
 				drinkingWaterInfo.appendChild(water);
 			} else {
@@ -226,7 +226,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.timezone.name === null) {
 				var time = document.createElement("div");
 				time.className = "time";
-				time.innerHTML = "No data found";
+				time.innerHTML = "No data found.";
 				console.log(time.innerHTML);
 				timezoneInfo.appendChild(time);
 			} else {
@@ -253,7 +253,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.currency.name === null) {
 				var curr = document.createElement("div");
 				curr.className = "curr";
-				curr.innerHTML = "No data found";
+				curr.innerHTML = "No data found.";
 				console.log(curr.innerHTML);
 				currencyInfo.appendChild(curr);
 			} else {
@@ -278,7 +278,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.language.length === 0) {
 				var lang = document.createElement("div");
 				lang.className = "lang";
-				lang.innerHTML = "No data found";
+				lang.innerHTML = "No data found.";
 				console.log(lang.innerHTML);
 				languageInfo.appendChild(lang);
 			} else {
@@ -306,7 +306,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.vaccinations.length === 0) {
 				var healthMessage = document.createElement("div");
 				healthMessage.className = "healthMessage";
-				healthMessage.innerHTML = "No data found";
+				healthMessage.innerHTML = "No data found.";
 				console.log(healthMessage.innerHTML);
 				vaccinationsHealthInfo.appendChild(healthMessage);
 			} else {
@@ -336,7 +336,7 @@ var getCountryInfo = async (countryName) => {
 
 			// Telephone description
 			var phoneDescription = document.createElement("div");
-			phoneDescription.innerHTML = "Telephone";
+			phoneDescription.innerHTML = "Emergency Numbers";
 			console.log(phoneDescription.innerHTML);
 			telephoneDescription.appendChild(phoneDescription);
 
@@ -344,7 +344,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.calling_code === null) {
 				var callingCode = document.createElement("div");
 				callingCode.className = "callingCode";
-				callingCode.innerHTML = " 📞 " + "No data found";
+				callingCode.innerHTML = " 📞 " + "No data found.";
 				console.log(callingCode.innerHTML);
 				telephoneInfo.appendChild(callingCode);
 			} else {
@@ -359,7 +359,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.ambulance === "") {
 				var ambulance = document.createElement("div");
 				ambulance.className = "ambulance";
-				ambulance.innerHTML = "🚑 " + "No data found";
+				ambulance.innerHTML = "🚑 " + "No data found.";
 				console.log(ambulance.innerHTML);
 				telephoneInfo.appendChild(ambulance);
 			} else {
@@ -374,7 +374,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.fire === "") {
 				var fire = document.createElement("div");
 				fire.className = "fire";
-				fire.innerHTML = "🔥 " + "No data found";
+				fire.innerHTML = "🔥 " + "No data found.";
 				console.log(fire.innerHTML);
 				telephoneInfo.appendChild(fire);
 			} else {
@@ -389,7 +389,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.telephone.police === "") {
 				var police = document.createElement("div");
 				police.className = "police";
-				police.innerHTML = "🚓 " + "No data found";
+				police.innerHTML = "🚓 " + "No data found.";
 				console.log(police.innerHTML);
 				telephoneInfo.appendChild(police);
 			} else {
@@ -409,7 +409,7 @@ var getCountryInfo = async (countryName) => {
 
 			// Electricity description
 			var elecDescription = document.createElement("div");
-			elecDescription.innerHTML = "Electricity";
+			elecDescription.innerHTML = "Electical Outlet Styles";
 			console.log(elecDescription.innerHTML);
 			electricityDescription.appendChild(elecDescription);
 
@@ -417,7 +417,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.electricity.voltage === "") {
 				var voltage = document.createElement("div");
 				voltage.className = "voltage";
-				voltage.innerHTML = "Voltage: No data found";
+				voltage.innerHTML = "Voltage: No data found.";
 				console.log(voltage.innerHTML);
 				electricityInfo.appendChild(voltage);
 			} else {
@@ -432,7 +432,7 @@ var getCountryInfo = async (countryName) => {
 			if (response.electricity.frequency === "") {
 				var frequency = document.createElement("div");
 				frequency.className = "frequency";
-				frequency.innerHTML = "Frequency: No data found";
+				frequency.innerHTML = "Frequency: No data found.";
 				console.log(frequency.innerHTML);
 				electricityInfo.appendChild(frequency);
 			} else {
@@ -448,7 +448,7 @@ var getCountryInfo = async (countryName) => {
 				console.log("Empty");
 				var plug = document.createElement("div");
 				plug.className = "plug";
-				plug.innerHTML += "Plug type: No data found";
+				plug.innerHTML += "Plug type: No data found.";
 				electricityInfo.appendChild(plug);
 			} else {
 				var plugsResponse = response.electricity.plugs;
