@@ -3,7 +3,7 @@ nav {
 }
 
 .head {
- text-align: center;
+    text-align: center;
 }
 
 .ui-autocomplete {
@@ -20,4 +20,12 @@ nav {
 
 .countryList {
     display: block;
+}
+
+
+#map {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center !important;
 }
