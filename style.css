@@ -1,5 +1,11 @@
 nav {
-    background-color: #9d9e9e !important;
+    background-color: #388186 !important;
+    color: #FDF6F6 !important;
+}
+
+.navbar-item {
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 .head {
@@ -12,13 +18,16 @@ nav {
 
 .body {
     font-family: 'Noto Sans', sans-serif !important;
+    color: #FDF6F6 !important;
 }
 html {
-    background-color: #00D1B2 !important;
+    background-color: #388186 !important;
 
 }
 #title {
     font-family: 'Edu TAS Beginner', cursive !important;
+    color: #2E2B2B !important;
+    font-size: 4rem !important;
 }
 
 .countryList {
@@ -28,4 +37,18 @@ html {
 
 #map {
     height: 500px;
+}
+
+.box {
+    background-color: #FDF6F6;
+}
+
+.button {
+    background-color: #2E2B2B ;
+    color: #FDF6F6;
+    border-color: #2E2B2B;
+}
+
+.black {
+    color: #2E2B2B !important;
 }
