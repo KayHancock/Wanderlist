@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>Wallabie Travel Planner</title>
+  <title>Wanderlist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
@@ -16,10 +16,10 @@
 </head>
 
 <body>
-  <header id="title" class="title head is-1">
-    Wallabie Travel Planner
+  <header id="title" class="title head is-1 has-background-primary">
+    Wanderlist
   </header>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -54,16 +54,16 @@
       </div>
     </div>
   </nav>
-  <div class="section">
+  <div class="section has-background-primary">
 
     <div>
-      <h3 class="body">Start your adventure here: </h3>
+      <h3 class="body title is-4">Start your adventure here: </h3>
       <input class="input is-info is-rounded is-medium" id="country-selector" type="text"
         placeholder="Where do you want to go?">
-      <button id="search" class="button is-primary is-normal">Submit</button>
+      <button id="search" class="button is-primary is-normal mt-4">Submit</button>
     </div>
-    <div id="saved-searches" class="is-hidden box title is-3 is-spaced">
-      <h3 class="subtitle is-5">Previous Search</h3>
+    <div id="saved-searches" class="is-hidden title is-4 is-spaced">
+      <h3 class="subtitle is-5 mt-4 mb-1">Pick up where you left off:</h3>
     </div>
 
     <div id="countryRef" class="body"></div>
