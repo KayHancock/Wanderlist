@@ -1,5 +1,5 @@
 # Wanderlist
-In this project, we have created a website that helps travellers find a safe country to visit and find information about prerequisites for travelling to that country. This is especially important as we are in constantly changing times due to the pandemic. Wanderlist helps travellers plan their trip accordingly with the help of the information provided on the website.
+In this project we have created a website that helps travellers find a safe country to visit and find information about prerequisites for travelling to that country. This is especially important as we are in constantly changing times due to the pandemic. Wanderlist helps travellers plan their trip accordingly with the help of the information provided on the website.
 ## GitHub Link
 https://github.com/KayHancock/Wanderlist
 ## GitHub Pages Link
