@@ -20,10 +20,12 @@ nav {
     font-family: 'Noto Sans', sans-serif !important;
     color: #FDF6F6 !important;
 }
+
 html {
     background-color: #388186 !important;
 
 }
+
 #title {
     font-family: 'Edu TAS Beginner', cursive !important;
     color: #2E2B2B !important;
@@ -44,7 +46,7 @@ html {
 }
 
 .button {
-    background-color: #2E2B2B ;
+    background-color: #2E2B2B;
     color: #FDF6F6;
     border-color: #2E2B2B;
 }
@@ -55,4 +57,12 @@ html {
 
 a {
     color: #87BFB9;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    /* Red */
+    color: white;
+    margin-bottom: 15px;
 }
